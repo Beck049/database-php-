@@ -15,6 +15,7 @@ session_start();
 	<link rel="stylesheet" href="tabs.css">
 </head>
 <body>
+	<!-- login logout style -->
 	<div>
 		<h1>This is the index page</h1>
 		<br>
@@ -32,6 +33,7 @@ session_start();
 		<br> 
 	</div>
 	<br>
+	<!-- nav bar tab -->
 	<div class="tab">
 		<button class="tablinks" onclick="openTab(event, 'Search')" id="defaultOpen">Search</button>
 		<?php
@@ -61,27 +63,18 @@ session_start();
 
 	<div id="Create" class="tabcontent">
 		<h3>Create Order</h3>
-		<!-- input: buyer | seller | product(mul) -->
-		<!-- create an Order
-	         check every product belongs to seller (Own) 
-			 add multiple Contain -->
-		<div></div>
+		
+		<iframe src="create.php" width="100%" ></iframe>
 	</div>
 
 	<div id="Modify"  class="tabcontent">
 		<h3>Modify</h3>
-		<!-- search Order
-	         show seller data | buyer data | products -->
-		<!-- select products to delete or delete all Order 
-	         ( check if state is prepareing )  -->
-		<div></div>
+		<iframe src="modify.php" width="100%" ></iframe>
 	</div>
 
 	<div id="Status"  class="tabcontent">
 		<h3>Status</h3>
-		<!-- serach order, show staus 
-	         check status add status -->
-		<div></div>
+		<iframe src="status.php" width="100%" ></iframe>
 	</div>
 
 	<div id="Analyze" class="tabcontent">
@@ -94,6 +87,7 @@ session_start();
 		<iframe src="root.php" width="100%" ></iframe>
 	</div>
 
+	<!-- script for tab -->
 	<script>
 		function openTab(evt, tabName) 
 		{
