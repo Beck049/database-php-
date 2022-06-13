@@ -52,6 +52,7 @@ session_start();
 			<input id="button" type="submit" name="ModPosition" value="submit">
 		</form></div>
 	</div>
+	<br>
 	<!-- delete Person -->
 	<div style = "padding: 16px; background-color: #ccc;">
 		<h3>Delete User</h3>
@@ -71,6 +72,7 @@ session_start();
 			<input id="button" type="submit" name="DeleteUser" value="Delete">
 		</form>
 	</div>
+	<br>
 	<!-- add product -->
 	<div style = "padding: 16px; background-color: #ccc;">
 		<?php
