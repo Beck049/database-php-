@@ -28,9 +28,9 @@
 				// 	while($row = mysqli_fetch_row($result)) {
 				// 		$product = get_product($row[0]);
 				// 		echo '<tr>';
-				// 		echo '<th style = "border: 1px solid;" >' . $product['name'] . '</th>';
-				// 		echo '<th style = "border: 1px solid;" >' . $product['cost'] . '</th>';
-				// 		echo '<th style = "border: 1px solid;" >' . get_amount($search_id) . '</th>';
+				// 		echo '<td style = "border: 1px solid;" >' . $product['name'] . '</th>';
+				// 		echo '<td style = "border: 1px solid;" >' . $product['cost'] . '</th>';
+				// 		echo '<td style = "border: 1px solid;" >' . get_amount($search_id) . '</th>';
 				// 		echo '</tr>';
 				// 	}
 				// }
