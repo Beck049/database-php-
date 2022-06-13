@@ -63,7 +63,6 @@ session_start();
 
 	<div id="Create" class="tabcontent">
 		<h3>Create Order</h3>
-		
 		<iframe src="create.php" width="100%" ></iframe>
 	</div>
 
