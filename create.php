@@ -17,60 +17,154 @@ session_start();
 </head>
 <body>
     <!-- input: buyer | seller | product(mul) -->
-		<!-- create an Order
-	         check every product belongs to seller (Own) 
-			 add multiple Contain -->
     <div class="clearfix">
 		<?php
-		if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['AddProduct'])) {
+		if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['AddOrder'])) {
 			$seller_id = $_POST['sell_id'];
             $buyer_id  = $_POST['buy_id'];
-            $p_name    = $_POST['p_name_n'];
-            $p_price   = $_POST['p_price_n'];
-            $p_amount  = $_POST['p_amount_n'];
+            $p_name1    = $_POST['p_name_n1'];    $p_name2    = $_POST['p_name_n2'];
+            $p_name3    = $_POST['p_name_n3'];    $p_name4    = $_POST['p_name_n4'];
+            $p_name5    = $_POST['p_name_n5'];
+            $p_price1   = $_POST['p_price_n1'];   $p_price2   = $_POST['p_price_n2'];
+            $p_price3   = $_POST['p_price_n3'];   $p_price4   = $_POST['p_price_n4'];
+            $p_price5   = $_POST['p_price_n5'];
+            $p_amount1  = $_POST['p_amount_n1'];  $p_amount2  = $_POST['p_amount_n2'];
+            $p_amount3  = $_POST['p_amount_n3'];  $p_amount4  = $_POST['p_amount_n4'];
+            $p_amount5  = $_POST['p_amount_n5'];
             $rand_id   = random_num(20);
-            if( $seller_id != NULL ) {
-                if( !empty($_POST['sell_id']) && !empty($_POST['p_name_n']) && !empty($_POST['p_price_n']) && !empty($_POST['p_amount_n']) ) {
+            if( !empty($seller_id) && !empty($buyer_id) ) {
                 
-                    $query = "insert into orders (id) values ('$radn_id')";
-                    mysqli_query($con, $query);
+                // orders
+                $query = "insert into orders (id) values ('$rand_id')";
+                mysqli_query($con, $query);
 
-                    $query = "select * from orders where id = '$rand_id'";
-                    $result = mysqli_query($con, $query);
-                    $order_id = mysqli_fetch_assoc($result);
-                    $order_id = $order_id['order_id'];
+                // get order_id
+                $query    = "select * from orders where id = '$rand_id'";
+                $result   = mysqli_query($con, $query);
+                $order_id = mysqli_fetch_assoc($result);
+                $order_id = $order_id['order_id'];
 
-                    $query = "insert into buy (id,order_id) value ('$buyer_id','$order_id')";
-                    mysqli_query($con, $query);
+                // buy
+                $query = "insert into buy (id, order_id) values ('$buyer_id', '$order_id')";
+                mysqli_query($con, $query);
 
-                    $query = "insert into sell (id,order_id) value ('$seller_id','$order_id')";
-                    mysqli_query($con, $query);
+                // sell
+                $query = "insert into sell (id, order_id) values ('$seller_id', '$order_id')";
+                mysqli_query($con, $query);
 
-                    $query = "select * from product where p_name = '$p_name' and cost = '$p_price'";
-                    $result = mysqli_query($con, $query);
+                // 1
+                // set_order($order_id, $seller_id, $buyer_id, $p_name1, $p_price1, $p_amount1);
+                if( !empty($p_name1) && !empty($p_price1) && !empty($p_amount1) ) {
+
+                    // get product_id
+                    $query = "select * from product where p_name = '$p_name1' and cost = '$p_price1';";
+                    $result   = mysqli_query($con, $query);
                     $product_id = mysqli_fetch_assoc($result);
                     $product_id = $product_id['product_id'];
-
-                    $query = "insert into contain (order_id, amount, product_id) value ('$order_id','$p_amount','$product_id')";
+            
+                    // contain
+                    $query = "insert into contain (order_id, amount, product_id) values ('$order_id','$p_amount1','$product_id');";
                     mysqli_query($con, $query);
-
-                    header("Refresh:0");
-			        die;
                 }
+                // 2
+                // set_order($order_id, $seller_id, $buyer_id, $p_name2, $p_price2, $p_amount2);
+                if( !empty($p_name2) && !empty($p_price2) && !empty($p_amount2) ) {
+
+                    // get product_id
+                    $query = "select * from product where p_name = '$p_name2' and cost = '$p_price2';";
+                    $result   = mysqli_query($con, $query);
+                    $product_id = mysqli_fetch_assoc($result);
+                    $product_id = $product_id['product_id'];
+            
+                    // contain
+                    $query = "insert into contain (order_id, amount, product_id) values ('$order_id','$p_amount2','$product_id');";
+                    mysqli_query($con, $query);
+                }
+                // 3
+                // set_order($order_id, $seller_id, $buyer_id, $p_name3, $p_price3, $p_amount3);
+                if( !empty($p_name3) && !empty($p_price3) && !empty($p_amount3) ) {
+
+                    // get product_id
+                    $query = "select * from product where p_name = '$p_name3' and cost = '$p_price3';";
+                    $result   = mysqli_query($con, $query);
+                    $product_id = mysqli_fetch_assoc($result);
+                    $product_id = $product_id['product_id'];
+            
+                    // contain
+                    $query = "insert into contain (order_id, amount, product_id) values ('$order_id','$p_amount3','$product_id');";
+                    mysqli_query($con, $query);
+                }
+                // 4
+                // set_order($order_id, $seller_id, $buyer_id, $p_name4, $p_price4, $p_amount4);
+                if( !empty($p_name4) && !empty($p_price4) && !empty($p_amount4) ) {
+
+                    // get product_id
+                    $query = "select * from product where p_name = '$p_name4' and cost = '$p_price4';";
+                    $result   = mysqli_query($con, $query);
+                    $product_id = mysqli_fetch_assoc($result);
+                    $product_id = $product_id['product_id'];
+            
+                    // contain
+                    $query = "insert into contain (order_id, amount, product_id) values ('$order_id','$p_amount4','$product_id');";
+                    mysqli_query($con, $query);
+                }
+                // 5
+                // set_order($order_id, $seller_id, $buyer_id, $p_name5, $p_price5, $p_amount5);
+                if( !empty($p_name5) && !empty($p_price5) && !empty($p_amount5) ) {
+
+                    // get product_id
+                    $query = "select * from product where p_name = '$p_name5' and cost = '$p_price5';";
+                    $result   = mysqli_query($con, $query);
+                    $product_id = mysqli_fetch_assoc($result);
+                    $product_id = $product_id['product_id'];
+            
+                    // contain
+                    $query = "insert into contain (order_id, amount, product_id) values ('$order_id','$p_amount5','$product_id');";
+                    mysqli_query($con, $query);
+                }
+
+                header("Refresh:0");
+			    die;
             }
 		}
 		?>
 		<h3>Add Product</h3>
-        <div class="float_left">
+        <div>
 		<form method="post">
 			<input id="text" type="text" name="sell_id" placeholder="Enter the seller ID"><br><br>
             <input id="text" type="text" name="buy_id" placeholder="Enter the buyer ID"><br><br>
-			<div>
-            <input id="text" type="text" name="p_name_n"  placeholder="Enter the product name"><br>
-			<input id="text" type="text" name="p_price_n" placeholder="Enter the product price"><br>
-			<input id="text" type="text" name="p_amount_n" placeholder="Enter the product amount"><br>
-            </div><br>
-            <input id="button" type="submit" name="AddProduct" value="Add">
+			<div class="float_left">
+                <div>
+                <input id="text" type="text" name="p_name_n1"  placeholder="Enter the product name"><br>
+                <input id="text" type="text" name="p_price_n1" placeholder="Enter the product price"><br>
+                <input id="text" type="text" name="p_amount_n1" placeholder="Enter the product amount"><br>
+                </div><br>
+                <div>
+                <input id="text" type="text" name="p_name_n2"  placeholder="Enter the product name"><br>
+                <input id="text" type="text" name="p_price_n2" placeholder="Enter the product price"><br>
+                <input id="text" type="text" name="p_amount_n2" placeholder="Enter the product amount"><br>
+                </div><br>
+                <div>
+                <input id="text" type="text" name="p_name_n3"  placeholder="Enter the product name"><br>
+                <input id="text" type="text" name="p_price_n3" placeholder="Enter the product price"><br>
+                <input id="text" type="text" name="p_amount_n3" placeholder="Enter the product amount"><br>
+                </div><br>
+            </div>
+            <div class="float_left">
+                <div>
+                <input id="text" type="text" name="p_name_n4"  placeholder="Enter the product name"><br>
+                <input id="text" type="text" name="p_price_n4" placeholder="Enter the product price"><br>
+                <input id="text" type="text" name="p_amount_n4" placeholder="Enter the product amount"><br>
+                </div><br>
+                <div>
+                <input id="text" type="text" name="p_name_n5"  placeholder="Enter the product name"><br>
+                <input id="text" type="text" name="p_price_n5" placeholder="Enter the product price"><br>
+                <input id="text" type="text" name="p_amount_n5" placeholder="Enter the product amount"><br>
+                </div><br>
+                <div>
+                <input id="button" type="submit" name="AddOrder" value="Submit">
+                </div>
+            </div>
 		</form>
         </div>
 	</div>
