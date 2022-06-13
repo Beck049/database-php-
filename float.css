@@ -1,0 +1,16 @@
+div {
+    display: block;
+    padding: 16px; 
+    background-color: #ccc;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    height: 100%;
+}
+.float_left {
+    float: left; 
+    padding: 15px; 
+    width: 35%;
+}
