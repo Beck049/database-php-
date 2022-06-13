@@ -29,6 +29,7 @@ create table Driver(
 
 create table Orders(
     order_id    bigint(20) NOT NULL AUTO_INCREMENT,
+	id          bigint(20)  NOT NULL,
     time        timestamp on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary key (order_id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci;
