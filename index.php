@@ -43,13 +43,13 @@ session_start();
 				echo '<button class="tablinks" onclick="openTab(event, ' . "'Create'" . ')">Create</button>';
 				echo '<button class="tablinks" onclick="openTab(event, ' . "'Modify'" . ')">Modify</button>';
 			}
-			if($pos / 4 % 2 == 1) {
+			if($pos % 4 / 2 == 1) {
 				echo '<button class="tablinks" onclick="openTab(event, ' . "'Status'" . ')">Status</button>';
 			}
-			if($pos / 8 % 4 == 1) {
+			if($pos % 8 / 4 == 1) {
 				echo '<button class="tablinks" onclick="openTab(event, ' . "'Analyze'" . ')">Analyze</button>';
 			}
-			if($pos / 16 % 8 == 1) {
+			if($pos % 16 / 8 == 1) {
 				echo '<button class="tablinks" onclick="openTab(event, ' . "'Root'" . ')">Root</button>';
 			}
 		}

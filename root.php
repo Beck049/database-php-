@@ -23,6 +23,8 @@ session_start();
 			$modify_id = $_POST['modify_id'];
 			$pos_num = 0;
 
+			if( isset($member) )
+
 			$query = "update person set position = '$pos_num' where person.id = '$modify_id';";
 			mysqli_query($con, $query);
 
@@ -32,10 +34,18 @@ session_start();
 		?>
 		<form method="post">
 			<input id="text" type="text" name="modify_id" placeholder="Enter the user ID"><br><br>
-			<?php
-
-			?>
-			<input id="button" type="submit" name="ModPosition" value="Add">
+			<input id="checkbox" type="checkbox" name="member" value="member">
+			<label for="member"> member </label>
+			<input id="checkbox" type="checkbox" name="member" value="member">
+			<label for="member"> driver </label>
+			<input id="checkbox" type="checkbox" name="member" value="member">
+			<label for="member"> analyzer </label>
+			<input id="checkbox" type="checkbox" name="member" value="member">
+			<label for="member"> employee </label>
+			<input id="checkbox" type="checkbox" name="member" value="member">
+			<label for="member"> root </label>
+			<br><br>
+			<input id="button" type="submit" name="ModPosition" value="submit">
 		</form></div>
 	</div>
 	<!-- delete Person -->
