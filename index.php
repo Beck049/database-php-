@@ -58,22 +58,22 @@ session_start();
 
 	<div id="Search"  class="tabcontent">
 		<h3>Search</h3>
-		<iframe src="search.php" width="100%" ></iframe>
+		<iframe src="search.php" width="100%" style="height: 340px;" ></iframe>
 	</div>
 
 	<div id="Create" class="tabcontent">
 		<h3>Create Order</h3>
-		<iframe src="create.php" width="100%" ></iframe>
+		<iframe src="create.php" width="100%" style="height: 340px;" ></iframe>
 	</div>
 
 	<div id="Modify"  class="tabcontent">
 		<h3>Modify</h3>
-		<iframe src="modify.php" width="100%" ></iframe>
+		<iframe src="modify.php" width="100%" style="height: 340px;" ></iframe>
 	</div>
 
 	<div id="Status"  class="tabcontent">
 		<h3>Status</h3>
-		<iframe src="status.php" width="100%" ></iframe>
+		<iframe src="status.php" width="100%" style="height: 340px;" ></iframe>
 	</div>
 
 	<div id="Analyze" class="tabcontent">
@@ -83,7 +83,7 @@ session_start();
 
 	<div id="Root"	class="tabcontent">
 		<h3>Root</h3>
-		<iframe src="root.php" width="100%" ></iframe>
+		<iframe src="root.php" width="100%" style="height: 340px;" ></iframe>
 	</div>
 
 	<!-- script for tab -->
