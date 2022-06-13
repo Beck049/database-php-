@@ -41,6 +41,8 @@ function random_num($max_length) {
 	return $text;
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
 // for div id = search
 function search_seller($search_id) {
 	$query = "select id from sell where order_id = '$search_id' limit 1";
@@ -126,20 +128,4 @@ function get_state($trans_id) {
 	}
 
 	return NULL;
-}
-
-// func for create.php
-function set_order($order_id, $seller_id, $buyer_id, $product_name, $product_cost, $amount) {
-	if( !empty($product_name) && !empty($product_cost) && !empty($amount) ) {
-
-		// get product_id
-		$query = "select * from product where p_name = '$product_name' and cost = '$product_cost';";
-		$result   = mysqli_query($con, $query);
-        $product_id = mysqli_fetch_assoc($result);
-        $product_id = $product_id['product_id'];
-
-		// contain
-		$query = "insert into contain (order_id, amount, product_id) values ('$order_id','$amount','$product_id');";
-		mysqli_query($con, $query);
-	}
 }
