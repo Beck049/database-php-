@@ -3,7 +3,7 @@
     height: 25px; 
     border-radius: 5px;
     padding: 4px;
-    border: solid thin #aaa;
+    border: solid thin #FAEBD7;
     width: 100%;
 }
 
@@ -11,14 +11,14 @@
 
     padding: 10px;
     width: 100px;
-    color: white;
-    background-color: lightblue;
+    color: #4D0000;
+    background-color: #FFDEAD;
     border: none;
 }
 
 #box{
 
-    background-color: grey;
+    background-color: #FAEBD7;
     margin: auto;
     width: 300px;
     padding: 20px; 

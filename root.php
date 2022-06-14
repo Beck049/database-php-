@@ -16,8 +16,8 @@ session_start();
 </head>
 <body>
 	<!-- modify position -->
-	<div style = "padding: 16px; background-color: #ccc;">
-		<h3>Modify Position</h3>
+	<div style = "padding: 16px; background-color: #FAEBD7">
+		<h3 style="color:#4D0000">Modify Position</h3>
 		<?php
 		if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['ModPosition'])) {
 			$modify_id = $_POST['modify_id'];
@@ -54,8 +54,8 @@ session_start();
 	</div>
 	<br>
 	<!-- delete Person -->
-	<div style = "padding: 16px; background-color: #ccc;">
-		<h3>Delete User</h3>
+	<div style = "padding: 16px; background-color: #FAEBD7;">
+		<h3 style="color:#4D0000">Delete User</h3>
 		<?php
 		if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['DeleteUser'])) {
 			$delete_id = $_POST['on_delete_id'];
@@ -74,7 +74,7 @@ session_start();
 	</div>
 	<br>
 	<!-- add product -->
-	<div style = "padding: 16px; background-color: #ccc;">
+	<div style = "padding: 16px; background-color: #FAEBD7;">
 		<?php
 		if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['AddProduct'])) {
 			$seller_id = $_POST['add_sell_id'];
@@ -96,7 +96,7 @@ session_start();
 			die;
 		}
 		?>
-		<h3>Add Product</h3>
+		<h3 style="color:#4D0000">Add Product</h3>
 		<form method="post">
 			<input id="text" type="text" name="add_sell_id" placeholder="Enter the seller ID"><br><br>
 			<input id="text" type="text" name="add_p_name"  placeholder="Enter the product name"><br><br>

@@ -4,7 +4,7 @@
 			<input id="text" type="text" name="search_id" placeholder="Enter the order ID">
 			<input id="button" type="submit" name="Search" value="Search"><br>
 		</form>
-		<div  style = "padding: 15px;" >
+		<div  style = "class=clearfix;padding: 15px;" >
 			<?php
 			// if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['Search']))
 			// {

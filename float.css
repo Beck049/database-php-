@@ -1,7 +1,7 @@
 div {
     display: block;
     padding: 16px; 
-    background-color: #ccc;
+    background-color: #FAEBD7;
 }
 .clearfix::after {
     content: "";
