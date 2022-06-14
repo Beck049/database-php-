@@ -26,7 +26,7 @@ session_start();
 	</div>
 	<div  style = "padding: 15px;" >
 		<?php
-		if( $_SESSION['REQUEST_METHOD'] == "POST" && isset($_POST['Search']) ) {
+		if( $_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['Search']) ) {
 			$search_id = $_POST['search_id'];
 
 			// seller --> buyer 
