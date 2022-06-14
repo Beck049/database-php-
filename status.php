@@ -13,6 +13,7 @@ session_start();
 <head>
 	<title>My database project</title>
 	<link rel="stylesheet" href="tabs.css">
+    <link rel="stylesheet" href="float.css">
 </head>
 <body>
     <!-- serach order, show staus 
