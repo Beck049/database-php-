@@ -36,6 +36,7 @@ create table Orders(
 
 create table Trans(
     trans_id    bigint(20) NOT NULL AUTO_INCREMENT,
+	id          bigint(20)  NOT NULL,
 	cur_state	int NOT NULL,
 	addr        varchar(64) NOT NULL,
 	time        timestamp on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
