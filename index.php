@@ -16,8 +16,8 @@ session_start();
 </head>
 <body>
 	<!-- login logout style -->
-	<div>
-		<h1 style="color:#4D0000 ; font_size: 50px;border: 1px solid #FFEBCD;background-color: #FAEBD7;">Main Page</h1>
+	<div style="border: 30px solid #FFEBCD;background-color: #FAEBD7;">
+		<h1 style="color:#4D0000 ; font_size: 50px;">Main Page</h1>
 		<img src='truck.jpg' width=30 height=30 style='float:right' />
 
 		<br>
