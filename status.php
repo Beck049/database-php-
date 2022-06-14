@@ -29,10 +29,11 @@ session_start();
 		if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['Search'])) {
 			$search_id = $_POST['search_id'];
 			
-			$query  = "select count(*) as cnt from status where status.order_id='$search_id'";
+			$query  = "select count(*) as cnt from states where states.order_id='$search_id'";
 			$result = mysqli_query($con, $query);
 			$data   = mysqli_fetch_assoc($result);
 			$data   = $data['cnt'];
+			$cur_state = 1;
 			if($data == 2) {
                 echo 'error message';
             }
@@ -43,7 +44,6 @@ session_start();
                     $result = mysqli_query($con,$query);
                     $addr_id  = mysqli_fetch_assoc($result);
                     $addr_id  = $addr_id['sell_id'];
-                    $query  = "select addr as address from person where person.id='$seller_id'";
                 }else if( $data==1 ){
                     $cur_state = 2;
                     $query  = "select id as buy_id from buy where buy.order_id='$search_id'";
@@ -55,26 +55,26 @@ session_start();
                 $result = mysqli_query($con,$query);
                 $address = mysqli_fetch_assoc($result);
                 $address = $address[ 'address' ];
-            }
+            
+				$id=random_num(20);
+				$query = "insert into trans (id,cur_state,addr) values ('$id','$cur_state','$address')";
+				mysqli_query($con, $query);
+
+				$query = "select trans_id from trans where trans.id='$id'";
+				$result= mysqli_query($con, $query);
+				$result = mysqli_fetch_assoc($result);
+				$trans_id = $result['trans_id'];
+
+				$query = "insert into states(order_id,trans_id) values('$search_id','$trans_id')";
+				mysqli_query($con,$query);
+
+				$id=$user_data['id'];
+				$query = "insert into work(id,trans_id) values('$id','$trans_id')";
+				mysqli_query($con,$query);
 			
-			$id=random_num(20);
-			$query = "insert into trans (id,cur_state,addr) values ('$id','$cur_state','$address')";
-			mysqli_query($con, $query);
-
-			$query = "select trans_id from trans where trans.id='$id'";
-			$result= mysqli_query($con, $query);
-			$result = mysqli_fetch_assoc($result);
-			$trans_id = $result['trans_id'];
-
-			$query = "insert into states(order_id,trans_id) values('$search_id','$trans_id')";
-			mysqli_query($con,$query);
-
-			$id=$user_data['id'];
-			$query = "insert into work(id,trans_id) values('$id','$trans_id')";
-			mysqli_query($con,$query);
-			
-			header("Refresh:0");
-			die;
+				header("Refresh:0");
+				die;
+			}
 		}
 		?>
 	</div>
