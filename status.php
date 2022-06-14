@@ -37,6 +37,7 @@ session_start();
 			if($data == 2) {
                 echo 'error message';
             }
+
             else {
                 if( $data==0 ){
                     $cur_state = 1;
@@ -44,12 +45,14 @@ session_start();
                     $result = mysqli_query($con,$query);
                     $addr_id  = mysqli_fetch_assoc($result);
                     $addr_id  = $addr_id['sell_id'];
+					echo 'Delivering';
                 }else if( $data==1 ){
                     $cur_state = 2;
                     $query  = "select id as buy_id from buy where buy.order_id='$search_id'";
                     $result = mysqli_query($con,$query);
                     $addr_id  = mysqli_fetch_assoc($result);
                     $addr_id  = $addr_id['buy_id'];
+					echo 'arrived';
                 }
                 $query  = "select addr as address from person where person.id='$addr_id'";
                 $result = mysqli_query($con,$query);
@@ -72,7 +75,6 @@ session_start();
 				$query = "insert into work(id,trans_id) values('$id','$trans_id')";
 				mysqli_query($con,$query);
 			
-				header("Refresh:0");
 				die;
 			}
 		}
