@@ -17,11 +17,12 @@ session_start();
 <body>
 	<!-- login logout style -->
 	<div>
-		<h1>This is the index page</h1>
+		<h1 style="color:#4D0000 ; font_size: 50px;border: 1px solid #FFEBCD;background-color: #FAEBD7;">Main Page</h1>
+		<img src='truck.jpg' width=30 height=30 style='float:right' />
+
 		<br>
 		<?php
 			if( $user_data == NULL ) {
-				
 				echo '<a href="login.php"  style = "float: right; padding: 6px;">Login </a>';
 				echo '<a href="signup.php" style = "float: right; padding: 6px;">Signup</a>'; 
 			}
@@ -33,6 +34,7 @@ session_start();
 		<br> 
 	</div>
 	<br>
+
 	<!-- nav bar tab -->
 	<div class="tab">
 		<button class="tablinks" onclick="openTab(event, 'Search')" id="defaultOpen">Search</button>

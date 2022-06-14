@@ -54,7 +54,7 @@ session_start();
 	<div id="box">
 		<a href="index.php" style="float: right; font-size: 20px;">&times</a>
 		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
+			<div style="font-size: 20px;margin: 10px;color: #4B0000;">Login</div>
 
 			<input id="text" type="text" name="user_name"><br><br>
 			<input id="text" type="password" name="password"><br><br>

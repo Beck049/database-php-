@@ -75,7 +75,7 @@ session_start();
     }
     ?>
     <div>
-        <h3>Modify Order</h3>
+        <h3 style="color:#4D0000">Modify Order</h3>
         <form method="post">
 			<input id="text" type="text" name="order_id" placeholder="Enter the seller ID"><br><br>
 			<input id="text" type="text" name="del_p_name"  placeholder="Enter the product name"><br><br>
