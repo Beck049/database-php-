@@ -40,7 +40,7 @@ session_start();
 			$seller = mysqli_fetch_assoc($result);
 			$seller = $seller['user_name'];
 			// $buyer  = search_buyer($search_id);
-			$query = "select id from sell where order_id = '$search_id' limit 1";
+			$query = "select id from buy where order_id = '$search_id' limit 1";
 			$result = mysqli_query($con, $query);
 			$buyer = mysqli_fetch_assoc($result);
 			$buyer = $buyer['id'];
@@ -59,36 +59,47 @@ session_start();
 					echo '<th style = "border: 1px solid;" >cost</th>';
 				echo '</tr>';
 
-				$query = "select * from contain where order_id = '$search_id';";
+				$query = "select product_id from contain where order_id = '$search_id';";
 				$result = mysqli_query($con, $query); 
 				while($row = mysqli_fetch_row($result)) {
-					$product = get_product($row[0]);
+					// $product = get_product($row[0]);
+					$query = "select * from product where product_id = '$row[0]';";
+					$result = mysqli_query($con, $query);
+					$product = mysqli_fetch_assoc($result);
 					echo '<tr>';
-					echo '<td style = "border: 1px solid;" >' . $product['name'] . '</th>';
+					echo '<td style = "border: 1px solid;" >' . $product['p_name'] . '</th>';
 					echo '<td style = "border: 1px solid;" >' . $product['cost'] . '</th>';
-					echo '<td style = "border: 1px solid;" >' . get_amount($search_id) . '</th>';
+					echo '<td style = "border: 1px solid;" >';
+					$query = "select * from contain where product_id = '$row[0]';";
+					$result = mysqli_query($con, $query);
+					$amount = mysqli_fetch_assoc($result);
+					$amount = $amount['amount'];
+					echo $amount; 
+					echo '</th>';
 					echo '</tr>';
 				}
 			echo '</table><br><br>';
 
 			// state
+			$cnt = 0;
 			echo '<p style = "font_size: 8px; color: green;"> preapring ---> ';
 			$query = "select count(*) as state from states where trans_id = '$search_id';";
 			$result = mysqli_query($con, $query);
-			$cnt = mysqli_fetch_assoc($cnt);
+			$cnt = mysqli_fetch_assoc($result);
 			$cnt = $cnt['state'];
 			if($cnt >= 1) {
-				echo '<p style = "font_size: 8px; color: green;"> sending ---> </p>';
+				echo '<a style = "font_size: 8px; color: green;"> sending ---> </a>';
 			}
 			else {
-				echo '<p style = "font_size: 8px; color: black;"> sending ---> </p>';
+				echo '<a style = "font_size: 8px; color: black;"> sending ---> </a>';
 			}
 			if($cnt == 2) {
-				echo '<p style = "font_size: 8px; color: green;"> arrived </p>';
+				echo '<a style = "font_size: 8px; color: green;"> arrived </a>';
 			}
 			else {
-				echo '<p style = "font_size: 8px; color: black;"> arrived </p>';
+				echo '<a style = "font_size: 8px; color: black;"> arrived </a>';
 			}
+			echo '</p>';
 		}
 		?>
     </div>
