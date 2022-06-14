@@ -11,8 +11,5 @@
 ## CREATE: Add Product
     dynamic display the block by clicking '+' & '-'
 
-## SEARCH
-    haven't strictly debug
-
 ## **Modify Personal Data**
     totally forgot
