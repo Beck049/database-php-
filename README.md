@@ -12,7 +12,7 @@
     dynamic display the block by clicking '+' & '-'
 
 ## SEARCH
-    nothing has really be done
+    haven't strictly debug
 
 ## **Modify Personal Data**
     totally forgot
