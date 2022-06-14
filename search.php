@@ -58,20 +58,17 @@ session_start();
 					echo '<th style = "border: 1px solid;" >Amount</th>';
 					echo '<th style = "border: 1px solid;" >cost</th>';
 				echo '</tr>';
-
-				$len = 0;
-				$query = "select count(*) as cnt from contain where order_id = '$search_id';";
-				$result = mysqli_query($con, $query); 
-				$data = mysqli_fetch_assoc($result);
-				$len = $data['cnt'];
-
+				//
+				$query  = "select count(*) as cnt from contain where order_id = '$search_id';";
+				$result = mysqli_query($con, $query);
+				$data   = mysqli_fetch_assoc($result);
+				$len   = $data['cnt'];
+				//echo $len;
+				//
 				$query = "select product_id from contain where order_id = '$search_id';";
-				$result = mysqli_query($con, $query); 
-				$row = mysqli_fetch_row($result);
-				for($i = 0; $i < $len; $i++) {
-					// $product = get_product($row[0]);
-					$p_id = $row[$i];
-					//
+				$result_r = mysqli_query($con, $query); 
+				while($row = mysqli_fetch_row($result_r)) {
+					$p_id = $row[0];
 					$query = "select * from product where product_id = '$p_id';";
 					$result = mysqli_query($con, $query);
 					$product = mysqli_fetch_assoc($result);
