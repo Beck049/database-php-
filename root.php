@@ -38,7 +38,7 @@ session_start();
 		?>
 		<form method="post">
 			<input id="text" type="text" name="modify_id" placeholder="Enter the user ID"><br><br>
-			<input id="checkbox" type="checkbox" name="member" value="member">
+			<input id="checkbox" type="checkbox" checked="checked" name="member" value="member />
 			<label for="member"> member </label>
 			<input id="checkbox" type="checkbox" name="driver" value="driver">
 			<label for="member"> driver </label>
