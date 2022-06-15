@@ -24,7 +24,7 @@ session_start();
 			<input id="button" type="submit" name="Search" value="Search"><br>
 		</form>
 	</div>
-	<div style = "padding: 16px; background-color: #ccc;">
+	<div style = "padding: 16px; background-color: #FFF8DC;">
 		<?php
 		if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['Search'])) {
 			$search_id = $_POST['search_id'];
