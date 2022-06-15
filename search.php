@@ -17,7 +17,7 @@ session_start();
 <body>
 <!-- input: Order_ID 
 	    	output:  buyer | state | products | cost | amount | seller | time -->
-	<div style = "padding: 16px; background-color: #ccc;">
+	<div style = "padding: 16px; background-color: #FAEBD7;">
 		<h3>Search by ID</h3>
             <form method="post">
 			<input id="text" type="text" name="search_id" placeholder="Enter the order ID">
