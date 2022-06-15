@@ -31,23 +31,23 @@ session_start();
                 $search_id = $_POST['search_id'];
 
                 //find order_id
-                $query  = "select order_id from sell where sell.id='$search_id'";
+                $query  = "select order_id from buy where id='$search_id'";
 				$result = mysqli_query($con,$query);
-                if( mysqli_num_rows($result) >0 ){
-                    while( $row = $result->fetch_assoc() ){
+                $cnt = mysqli_num_rows($result);
+                if( $cnt >0 ){
+                    while( $row = mysqli_fetch_assoc($result) ){
                         $order_id = $row['order_id'];
-                        echo "order_id:".$order_id;
                         //find product_id
-                        $query  = "select product_id from contain where contain.order_id='$order_id'";
+                        $query  = "select product_id from contain where order_id='$order_id'";
 				        $result = mysqli_query($con, $query);
 				        $data   = mysqli_fetch_assoc($result);
 				        $data   = $data['product_id'];
                         //find product detail
-                        $query  = "select p_name cost from product where product.product_id='$data'";
+                        $query  = "select p_name , cost from product where product.product_id='$data'";
 				        $result = mysqli_query($con, $query);
 				        $data   = mysqli_fetch_assoc($result);
-                        echo "name: ". $data['p_name']." - cost: ".$data['cost']."<br>";                    
-                    }
+                        echo "name: ". $data['p_name']." - cost: ".$data['cost']."<br>";   
+                        }
                 }else {
                     echo '0 results';
                 }
@@ -62,20 +62,20 @@ session_start();
                 //find order_id
                 $query  = "select order_id from buy where buy.id='$search_id'";
 				$result = mysqli_query($con,$query);
-                if( mysqli_num_rows($result) >0 ){
-                    while( $row = $result->fetch_assoc() ){
+                $cnt = mysqli_num_rows($result);
+                if( $cnt >0 ){
+                    while( $row = mysqli_fetch_assoc($result) ){
                         $order_id = $row['order_id'];
-                        echo "order_id:".$order_id;
                         //find product_id
-                        $query  = "select product_id from contain where contain.order_id='$order_id'";
+                        $query  = "select product_id from contain where order_id='$order_id'";
 				        $result = mysqli_query($con, $query);
 				        $data   = mysqli_fetch_assoc($result);
 				        $data   = $data['product_id'];
                         //find product detail
-                        $query  = "select p_name cost from product where product.product_id='$data'";
+                        $query  = "select p_name , cost from product where product.product_id='$data'";
 				        $result = mysqli_query($con, $query);
 				        $data   = mysqli_fetch_assoc($result);
-                        echo "name: ". $data['p_name']." - cost: ".$data['cost']."<br>";                    
+                        echo "name: ". $data['p_name']." - cost: ".$data['cost']."<br>";                 
                     }
                 }else {
                     echo '0 results';
