@@ -80,6 +80,7 @@ session_start();
 
 	<div id="Analyze" class="tabcontent">
 		<h3>Analyze</h3>
+		<iframe src="analyze.php" width="100%" style="height: 340px;" ></iframe>
 		<div></div>
 	</div>
 
