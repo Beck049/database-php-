@@ -32,6 +32,12 @@ session_start();
         $count = $count['total'];
 
         echo $count;
+        
+        // 確認該order_id 的 states的數量為0 才可接著取消訂單
+        $query = "select count(*) as cnt from states where states.order_id='$order_id'";
+        $result = mysqli_query($con,$query);
+        $states_cnt = mysqli_fetch_assoc($result);
+        $states_cnt = $states_cnt['cnt'];
 
         // get product_id
         $query = "select product_id from product where p_name = '$p_name' and cost = '$p_price';";
@@ -39,37 +45,38 @@ session_start();
         $product_id = mysqli_fetch_assoc($result);
         $product_id = $product_id['product_id'];
 
-        if( $count > 1 ) {
-            // delete contain
-            if($amount == 0) {
-                $query = "delete from contain where contain.order_id = '$order_id' and contain.product_id = '$product_id';";
-			    mysqli_query($con, $query);
+        if( $states_cnt == 0 ){
+            if( $count > 1 ) {
+                // delete contain
+                if($amount == 0) {
+                    $query = "delete from contain where contain.order_id = '$order_id' and contain.product_id = '$product_id';";
+			        mysqli_query($con, $query);
+                }
+                // mod
+                else {
+                    $query = "update contain set amount = '$amount' where contain.order_id = '$order_id' and contain.product_id = '$product_id';";
+			        mysqli_query($con, $query);
+                }
             }
-            // mod
-            else {
-                $query = "update contain set amount = '$amount' where contain.order_id = '$order_id' and contain.product_id = '$product_id';";
-			    mysqli_query($con, $query);
-            }
-        }
-        else if ( $count == 1 ) {
-            // delete contain & order
-            if($amount == 0) {
-                $query = "delete from contain where contain.order_id = '$order_id' and contain.product_id = '$product_id';";
-			    mysqli_query($con, $query);
+            else if ( $count == 1 ) {
+                // delete contain & order
+                if($amount == 0) {
+                    $query = "delete from contain where contain.order_id = '$order_id' and contain.product_id = '$product_id';";
+			        mysqli_query($con, $query);
 
-                $query = "delete from orders where order.order_id = '$order_id';";
-			    mysqli_query($con, $query);
+                    $query = "delete from orders where order.order_id = '$order_id';";
+			        mysqli_query($con, $query);
+                }
+                // mod
+                else {
+                    $query = "update contain set amount = '$amount' where contain.order_id = '$order_id' and contain.product_id = '$product_id';";
+			        mysqli_query($con, $query);
+                }
             }
-            // mod
             else {
-                $query = "update contain set amount = '$amount' where contain.order_id = '$order_id' and contain.product_id = '$product_id';";
-			    mysqli_query($con, $query);
+                echo '<p style="color:red;"> error </p>';
             }
         }
-        else {
-            echo '<p style="color:red;"> error </p>';
-        }
-
         header("Refresh:0");
         die;
     }
