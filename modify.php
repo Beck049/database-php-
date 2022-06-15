@@ -76,10 +76,12 @@ session_start();
             else {
                 echo '<p style="color:red;"> error </p>';
             }
-        }else echo '<<delivering>> You can not modify the order.'
-        
-        header("Refresh:0");
-        die;
+        }else{
+            echo '<<delivering>> You can not modify the order.';
+            header("Refresh:0");
+
+            die;
+        }
     }
     ?>
     <div>
