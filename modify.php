@@ -32,7 +32,7 @@ session_start();
         $count = $count['total'];
 
         echo $count;
-        
+
         // 確認該order_id 的 states的數量為0 才可接著取消訂單
         $query = "select count(*) as cnt from states where states.order_id='$order_id'";
         $result = mysqli_query($con,$query);
@@ -76,7 +76,8 @@ session_start();
             else {
                 echo '<p style="color:red;"> error </p>';
             }
-        }
+        }else echo '<<delivering>> You can not modify the order.'
+        
         header("Refresh:0");
         die;
     }
