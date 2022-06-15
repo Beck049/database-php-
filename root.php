@@ -46,7 +46,7 @@ session_start();
 			<label for="member"> analyzer </label>
 			<input id="checkbox" type="checkbox" name="employee" value="employee">
 			<label for="member"> employee </label>
-			<input id="checkbox" type="checkbox" name="root" value="root">
+			<input id="checkbox" type="checkbox" disabled="disabled" name="root" value="root">
 			<label for="member"> root </label>
 			<br><br>
 			<input id="button" type="submit" name="ModPosition" value="submit">
