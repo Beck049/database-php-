@@ -3,7 +3,7 @@
 $dbhost = "localhost";
 $dbuser = "team3";
 $dbpass = "rExeMa";
-$dbname = "database_project";
+$dbname = "team3";
 
 if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 {
