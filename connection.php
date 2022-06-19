@@ -1,8 +1,8 @@
 <?php
 
 $dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "beck0000";
+$dbuser = "team3";
+$dbpass = "rExeMa";
 $dbname = "database_project";
 
 if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
