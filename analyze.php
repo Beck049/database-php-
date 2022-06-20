@@ -26,16 +26,16 @@ session_start();
 		</form>
 	</div>
 	<div style = "padding: 16px; background-color: #FFF8D7;">
-		<?php
+    <?php
 		    if( $_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['Sell']) ) {
                 $search_id = $_POST['search_id'];
 
                 //find order_id
-                $query  = "select order_id from buy where id='$search_id'";
+                $query  = "select order_id from sell where id='$search_id'";
 				$result = mysqli_query($con,$query);
                 $cnt = mysqli_num_rows($result);
-                if( $cnt >0 ){
-                    while( $row = mysqli_fetch_assoc($result) ){
+                if( $cnt > 0 ){
+                        $row = mysqli_fetch_assoc($result);
                         $order_id = $row['order_id'];
                         //find product_id
                         $query  = "select product_id from contain where order_id='$order_id'";
@@ -47,7 +47,7 @@ session_start();
 				        $result = mysqli_query($con, $query);
 				        $data   = mysqli_fetch_assoc($result);
                         echo "name: ". $data['p_name']." - cost: ".$data['cost']."<br>";   
-                        }
+                        
                 }else {
                     echo '0 results';
                 }
@@ -55,7 +55,7 @@ session_start();
 		?>
     </div>
 	<div style = "padding: 16px; background-color: #FFF8D7;">
-        <?php
+    <?php
             if( $_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['Buy']) ) {
                 $search_id = $_POST['search_id'];
 
@@ -64,7 +64,7 @@ session_start();
 				$result = mysqli_query($con,$query);
                 $cnt = mysqli_num_rows($result);
                 if( $cnt >0 ){
-                    while( $row = mysqli_fetch_assoc($result) ){
+                        $row = mysqli_fetch_assoc($result);
                         $order_id = $row['order_id'];
                         //find product_id
                         $query  = "select product_id from contain where order_id='$order_id'";
@@ -76,7 +76,6 @@ session_start();
 				        $result = mysqli_query($con, $query);
 				        $data   = mysqli_fetch_assoc($result);
                         echo "name: ". $data['p_name']." - cost: ".$data['cost']."<br>";                 
-                    }
                 }else {
                     echo '0 results';
                 }

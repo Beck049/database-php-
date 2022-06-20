@@ -99,7 +99,7 @@ session_start();
 			else {
 				echo '<a style = "font_size: 8px; color: black;"> sending ---> </a>';
 			}
-			if($cnt == 2) {
+			if($cnt >= 2) {
 				echo '<a style = "font_size: 8px; color: green;"> arrived </a>';
 			}
 			else {

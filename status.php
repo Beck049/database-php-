@@ -20,6 +20,7 @@ session_start();
 			check status add status -->
 	<div id="box">
 		<form method="post">
+			<input id="text" type="text" name="search_id" placeholder="Enter the order ID">
 			<input id="button" type="submit" name="Search" value="Search"><br>
 		</form>
 	</div>
