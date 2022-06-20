@@ -89,10 +89,11 @@ session_start();
 			// state
 			$cnt = 0;
 			echo '<p style = "font_size: 8px; color: green;"> preapring ---> ';
-			$query = "select count(*) as state from states where trans_id = '$search_id';";
+			$query = "select count(*) as state from states where order_id = '$search_id';";
 			$result = mysqli_query($con, $query);
 			$cnt = mysqli_fetch_assoc($result);
 			$cnt = $cnt['state'];
+			
 			if($cnt >= 1) {
 				echo '<a style = "font_size: 8px; color: green;"> sending ---> </a>';
 			}
