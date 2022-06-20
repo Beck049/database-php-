@@ -34,6 +34,7 @@ session_start();
                 $query  = "select order_id from sell where id='$search_id'";
 				$result = mysqli_query($con,$query);
                 $cnt = mysqli_num_rows($result);
+
                 if( $cnt > 0 ){
                         $row = mysqli_fetch_assoc($result);
                         $order_id = $row['order_id'];
@@ -64,7 +65,9 @@ session_start();
 				$result = mysqli_query($con,$query);
                 $cnt = mysqli_num_rows($result);
                 if( $cnt >0 ){
+
                         $row = mysqli_fetch_assoc($result);
+
                         $order_id = $row['order_id'];
                         //find product_id
                         $query  = "select product_id from contain where order_id='$order_id'";
