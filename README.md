@@ -27,7 +27,7 @@ This is the [Gerneral Database Concept](https://hackmd.io/YHarN_dYQ9mKbcj-JTUaeQ
 ## Database Structure
 
 ### DDL Design
-<img src="./pic/DDL.jpg" width="100%">
+<img src="./pic/DDL.jpg" width="60%">
 
 ### Entity Table
 |Name |Attribute|Description|
@@ -38,7 +38,7 @@ This is the [Gerneral Database Concept](https://hackmd.io/YHarN_dYQ9mKbcj-JTUaeQ
 |:---:|:-------:|:---------:|
 
 ### E-R Diagram
-<img src="./pic/ER_Diagram.jpg" width="100%">
+<img src="./pic/ER_Diagram.jpg" width="60%">
 
 ## Function Description
 1. 使用者可以申請會員，並登入更改自己的個人資訊，如：名字、密碼、地址。
@@ -49,15 +49,15 @@ This is the [Gerneral Database Concept](https://hackmd.io/YHarN_dYQ9mKbcj-JTUaeQ
 
 ## Demo Pictures
 
-<img src="./pic/demo_signup.png" width="100%">
-<img src="./pic/demo_login.png" width="100%">
+<img src="./pic/demo_signup.png" width="40%">
+<img src="./pic/demo_login.png" width="40%">
 <img src="./pic/demo_search01.png" width="100%">
 <img src="./pic/demo_search02.png" width="100%">
 <img src="./pic/demo_create.png" width="100%">
 <img src="./pic/demo_edit.png" width="100%">
 <img src="./pic/demo_status.png" width="100%">
 <img src="./pic/demo_analyze.png" width="100%">
-<img src="./pic/search_obj.png" width="100%">
+<img src="./pic/search_obj.png" width="30%">
 <img src="./pic/demo_root01.png" width="100%">
 <img src="./pic/demo_root02.png" width="100%">
 
