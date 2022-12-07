@@ -21,12 +21,34 @@ This is the [Gerneral Database Concept](https://hackmd.io/YHarN_dYQ9mKbcj-JTUaeQ
 > [註2] 包含姓名、電話、地址、編號
 > [註3] 包含貨品內容(依照寄件者填寫)、價值(依照寄件者填寫)、購物平台、 分類
 
-## 
+## System Structure
+
+## Database Structure
+
+### DDL Design
+
+### Entity Table
+|Name |Attribute|Description|
+|:---:|:-------:|:---------:|
+
+### Relation Table
+|Name |Attribute|Description|
+|:---:|:-------:|:---------:|
+
+### E-R Diagram
+
+## Function Description
+1. 使用者可以申請會員，並登入更改自己的個人資訊，如：名字、密碼、地址。
+2. 使用者可以透過特定索引將資料庫裡的資料分類以便於分析。
+3. 使用者可以將商品加入自己的商場，並設定該商品的金額、數量。
+4. 使用者可以透過訂單編號搜尋訂單狀態(分為：已出貨、配送中、已送達)
+5. 使用者可以看見自己的交易歷史紀錄
 
 ## Wait Lists
 
 |Improtance|Problem|Position|Description|
 |:---:|:---:|:---:|:---:|
+|High|Color Matching|Fix !!!|The color matching is ...|
 |High|Modify Personal Data|Add Feature|we need a page to Modify Personal Data|
 |medium|Add Product|Fix|dynamic display the block by clicking '+' & '-'|
 |low|Modify Person|Root|lock the member check-box<br>check the position check-box|
