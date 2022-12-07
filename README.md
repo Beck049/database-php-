@@ -22,7 +22,7 @@ This is the [Gerneral Database Concept](https://hackmd.io/YHarN_dYQ9mKbcj-JTUaeQ
 > [註3] 包含貨品內容(依照寄件者填寫)、價值(依照寄件者填寫)、購物平台、 分類
 
 ## System Structure
-<img src="./pic/system" width="50%">
+<img src="./pic/system.png" width="50%">
 
 ## Database Structure
 
