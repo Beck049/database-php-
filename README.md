@@ -10,20 +10,24 @@ This is the [Gerneral Database Concept](https://hackmd.io/YHarN_dYQ9mKbcj-JTUaeQ
 - MySQL
 - Apache
 
+## Intorduction
 
+### Motivation
+對物流公司而言，確切掌握商品流向是減少成本的關鍵之一。一個好的管理系統能夠幫助公司提高管理的工作效率；改善物流公司內部以及整個供應鏈各個環節的管理、調度及資源分配成為物流公司必須考慮的問題，而解決問題的途徑之一就是建置一個有效的管理系統，這個管理系統可以提供給物流公司的員工登入以進行查詢訂單、資料分析等功能，也能提供消費者透過訂單ID查詢貨物狀態。
+
+### Requirement Analysis
+本專題內容為物流管理系統。系統可分為兩個模式，分別為顧客模式及管理員模式。訪客模式可供顧客透過物流訂單編號查詢貨物最新配送狀態[註1]。管理員模式需要透過帳號密碼登入，透過物流訂單編號查詢進行物流管理、查詢物流詳細資料，包含寄/收件人基本資料[註2]，貨品資料[註3]。另外，可新增/刪除/更改訂單資料。管理員模式亦提供分類功能，透過電商平台、寄收件縣市、貨物狀態等分類進行查詢，可提供資料分析用途。
+> [註1] 包含出貨時間、到各縣市分派時間、到貨時間
+> [註2] 包含姓名、電話、地址、編號
+> [註3] 包含貨品內容(依照寄件者填寫)、價值(依照寄件者填寫)、購物平台、 分類
+
+## 
 
 ## Wait Lists
 
-### ROOT: Modify Person
-    lock the member check-box
-    check the position check-box
-    
-### MODIFY: Modify Order
-    check if status != 0,
-    then lock the function
-    
-### CREATE: Add Product
-    dynamic display the block by clicking '+' & '-'
-
-### **Modify Personal Data**
-    totally forgot
+|Improtance|Problem|Position|Description|
+|:---:|:---:|:---:|:---:|
+|High|Modify Personal Data|Add Feature|we need a page to Modify Personal Data|
+|medium|Add Product|Fix|dynamic display the block by clicking '+' & '-'|
+|low|Modify Person|Root|lock the member check-box<br>check the position check-box|
+|low|Modify Order|Modify|check if status != 0<br>then lock the function|
