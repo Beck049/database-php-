@@ -22,11 +22,12 @@ This is the [Gerneral Database Concept](https://hackmd.io/YHarN_dYQ9mKbcj-JTUaeQ
 > [註3] 包含貨品內容(依照寄件者填寫)、價值(依照寄件者填寫)、購物平台、 分類
 
 ## System Structure
-<img src="./pic/system.png" width="50%">
+<img src="./pic/system.png" width="100%">
 
 ## Database Structure
 
 ### DDL Design
+<img src="./pic/DDL.jpg" width="100%">
 
 ### Entity Table
 |Name |Attribute|Description|
@@ -37,6 +38,7 @@ This is the [Gerneral Database Concept](https://hackmd.io/YHarN_dYQ9mKbcj-JTUaeQ
 |:---:|:-------:|:---------:|
 
 ### E-R Diagram
+<img src="./pic/ER_Diagram.jpg" width="100%">
 
 ## Function Description
 1. 使用者可以申請會員，並登入更改自己的個人資訊，如：名字、密碼、地址。
@@ -44,6 +46,21 @@ This is the [Gerneral Database Concept](https://hackmd.io/YHarN_dYQ9mKbcj-JTUaeQ
 3. 使用者可以將商品加入自己的商場，並設定該商品的金額、數量。
 4. 使用者可以透過訂單編號搜尋訂單狀態(分為：已出貨、配送中、已送達)
 5. 使用者可以看見自己的交易歷史紀錄
+
+## Demo Pictures
+
+<img src="./pic/demo_signup.png" width="100%">
+<img src="./pic/demo_login.png" width="100%">
+<img src="./pic/demo_search01.png" width="100%">
+<img src="./pic/demo_search02.png" width="100%">
+<img src="./pic/demo_create.png" width="100%">
+<img src="./pic/demo_edit.png" width="100%">
+<img src="./pic/demo_status.png" width="100%">
+<img src="./pic/demo_analyze.png" width="100%">
+<img src="./pic/search_obj.png" width="100%">
+<img src="./pic/demo_root01.png" width="100%">
+<img src="./pic/demo_root02.png" width="100%">
+
 
 ## Wait Lists
 
